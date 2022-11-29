@@ -66,6 +66,8 @@ header {
   text-align: center;
   color: var(--paragraph-color-on-color);
   background-color: var(--paragraph-background-color);
+  display: grid;
+  grid-template-columns: 300px 1fr;
 }
 header > h1,
 header > h2 {
@@ -180,4 +182,8 @@ nav a:hover {
   grid-area: right;
   border-top: 1px solid;
   border-right: 1px solid;
+}
+
+.logo {
+  width: 200px;
 }
