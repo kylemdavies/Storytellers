@@ -46,6 +46,7 @@ function articleTemplate(){
     let location = getRandom(locations);
     let name = getRandom(names);
     let race = getRandom(races);
+    let subrace = get_subrace(race);
     let aclass = getRandom(classes);
     let background = getRandom(backgrounds);
     story.innerHTML += `
@@ -54,15 +55,142 @@ function articleTemplate(){
         <li>${location}</li>
         <li>${name}</li>
         <li>${race}</li>
+        <li>${subrace}</li>
         <li>${aclass}</li>
         <li>${background}</li>
     `;
 }
 
+function get_subrace(race){
+    let subrace = ""
+    let subraces = ""
+    //I included all races incase later on more subclasses are available
+    if (race == "Dwarf") {
+            subraces =  ["Hill Dwarf", "Mountain Dwarf", "Duergar", "Ember Dwarf",
+            "Stone Dwarf", "Tundra Dwarf"];
+    };
+    if (race == "Elf") {
+            subraces = ["High Elf", "Wood Elf", "Dark Elf (Drow)", "Moon Elf", 
+            "Sun Elf", "Pallid Elf", "Sea Elf", "Bright Elf", "Green Elf", 
+            "Thimble Elf"];
+    };
+    if (race == "Halfling") {
+            subraces = ["Lightfoot", "Stout", "Jungle Halfling", "River Halfling",
+                "Lotusden", "Strongheart"];
+    };
+    if (race == "Human") {
+            subraces =  [""];
+    };
+    if (race == "Dragonborn") {
+            subraces = ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold",
+            "Green", "Red", "Silver", "White", "Draconblood", "Ravenite"];
+    };
+    if (race == "Gnome") {
+            subraces = ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold",
+            "Green", "Red", "Silver", "White", "Draconblood", "Ravenite"];
+    };
+    if (race == "Half-elf") {
+            subraces = ["Wood Elf (Variant)", "Moon Elf (Variant)", "Sun Elf (Variant)",
+                "Aquatic Elf (Variant)"];
+    };
+    if (race == "Half-orc") {
+            subraces = [""];
+    };
+    if (race == "Tiefling") {
+            subraces = ["Feral (Variant)", "Devil's Tongue (Variant)", 
+            "Hellfire (Variant)", "Winged (Variant)", "Apperance (Variant)"];
+    };
+    if (race == "Aarakocra") {
+            subraces = [""];
+    };
+    if (race == "Genasi") {
+            subraces = ["Air Genasi", "Earth Genasi", "Fire Genasi",
+                "Water Genasi", "Ash Genasi", "Ice Genasi", "Slime Genasi",
+                "Storm Genasi"];
+    };
+    if (race == "Goliath") {
+            subraces = [""];
+    };
+    if (race == "Changelings") {
+            subraces = [""];
+    };
+    if (race == "Goblinoids") {
+            subraces = ["Bugbear", "Goblin", "Hobgoblin"];
+    };
+    if (race == "Kalashtar") {
+            subraces = [""];
+    };
+    if (race == "Orc") {
+            subraces = [""];
+    };
+    if (race == "Shifters") {
+            subraces = ["Beasthide", "Longtooth", "Swiftstride", "Wildhunt"];
+    };
+    if (race == "Warforged") {
+            subraces = [""];
+    };
+    if (race == "Corvian") {
+            subraces = [""];
+    };
+    if (race == "Crystalkin") {
+            subraces = ["Shardmind", "Glassheart"];
+    };
+    if (race == "Deepling") {
+            subraces = [""];
+    };
+    if (race == "Fairy") {
+            subraces = ["Pixies", "Sprites", "Scamps"];
+    };
+    if (race == "Centaur") {
+            subraces = [""];
+    };
+    if (race == "Leonin") {
+            subraces = [""];
+    };
+    if (race == "Minotaur") {
+            subraces = [""];
+    };
+    if (race == "Satyr") {
+            subraces = [""];
+    };
+    if (race == "Triton") {
+            subraces = [""];
+    };
+    if (race == "Aasimar") {
+            subraces = ["Protector Aasimar", "Scourge Aasimar", "Fallen Aasimar"];
+    };
+    if (race == "Firbolgs") {
+            subraces = [""];
+    };
+    if (race == "Kenku") {
+            subraces = [""];
+    };
+    if (race == "Tortles") {
+            subraces = [""];
+    };
+    if (race == "Simic Hybrid") {
+            subraces = [""];
+    };
+    if (race == "Vedalken") {
+            subraces = [""];
+    };
+    if (race == "Loxodon") {
+            subraces = [""];
+    };
+    if (race == "Tabaxi") {
+            subraces = [""];
+    };
+    if (race == "Hollow One") {
+            subraces = [""];
+    };
+    subrace = getRandom(subraces);
+    return subrace;
+}
+
 articleTemplate();
 
+//#Town Info 
 /*
-#Town Info 
 def get_town():
     towns = ["Skystead", "Yarrin", "Fjordton", "Haling Cove", "Lockwood Village", 
         "Daekrahm Village", "Old Begtuok", "Lumina Village", "Tarnstead Outpost", 
@@ -70,15 +198,18 @@ def get_town():
         "Glimmer Villa", "Town of Ebba", "Sky Port"]
     town = make_random(towns)
     return town
-
+*/
+/*
 def get_town_type():
     types = ["Coastal", "Forested", "Cliffside", "Port", "Mountain", "Underground", 
     "Desert", "Frozen Tundra", "Taiga", "Rain Forested", "Grassland", "Savanna",
     "Underwater", "Swamp"]
     type = make_random(types)
     return type
+*/
 
-#Location Info
+//#Location Info
+/*
 def get_location():
     locations = ["Mine", "Ruin", "Haunted House", "Camp", "School", "Temples",
                 "Fortress", "Castle", "Dungeon", "Road", "Bridge", "Ferry", 
@@ -87,16 +218,18 @@ def get_location():
                 "Healers", "Brawl", "Tea Shop", "Forest", "Festival", "Watch duty"]
     location = make_random(locations)
     return location
-
-#Character Name
+*/
+//#Character Name
+/*
 def get_name():
     names = ["Raven", "Brona", "Lorelai", "Alastair", "Azazel", "Jabez", "Sable",
             "Hades", "Odon", "Typhon", "Adrielle", "Thanatos", "Revon", "Kol",
             "Nyx", "Vlasta", "Keres", "Kuraim", "Ozul"]
     name = make_random(names)
     return name
-
-#Character Info
+*/
+//#Character Info
+/*
 def get_race():
     races = ["Dwarf", "Elf", "Halfling",
         "Human", "Dragonborn", "Gnome", "Half-elf",
@@ -109,7 +242,8 @@ def get_race():
         "Tabaxi", "Hollow One"]
     race = make_random(races)
     return race
-
+*/
+/*
 def get_subrace(race):
     subrace = ""
     if race == "Dwarf":
