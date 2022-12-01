@@ -1,6 +1,9 @@
 updateUl = document.querySelector(".updates")
 
-let updates = [{num:"1.0", date:"12/01/2022", description:"First"}]
+let updates = [
+    {num:"1.0", date:"12/01/2022", description:"Home page set up complete"},
+    {num:"1.1", date:"12/01/2022", description:"Basic randomization complete"}
+]
     
 
 function updateTemplate(section,updates) {

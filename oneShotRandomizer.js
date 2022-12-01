@@ -1,9 +1,39 @@
-
 let output = "Hello";
-let town = ["Skystead", "Yarrin", "Fjordton", "Haling Cove", "Lockwood Village", 
+let towns = ["Skystead", "Yarrin", "Fjordton", "Haling Cove", "Lockwood Village", 
 "Daekrahm Village", "Old Begtuok", "Lumina Village", "Tarnstead Outpost", 
 "Aygisth Village", "Western Solaris", "Warchester Town", "Akriel Town",
 "Glimmer Villa", "Town of Ebba", "Sky Port"];
+let cityTypes = ["Coastal", "Forested", "Cliffside", "Port", "Mountain", "Underground", 
+"Desert", "Frozen Tundra", "Taiga", "Rain Forested", "Grassland", "Savanna",
+"Underwater", "Swamp"];
+let locations = ["Mine", "Ruin", "Haunted House", "Camp", "School", "Temples",
+"Fortress", "Castle", "Dungeon", "Road", "Bridge", "Ferry", 
+"Inn", "Tavern", "Port", "Saloon", "Prison", "Shop", "Church",
+"Bathhouse", "Library", "Arena", "Auction", "Party", "Performance",
+"Healers", "Brawl", "Tea Shop", "Forest", "Festival", "Watch duty"];
+let names = ["Raven", "Brona", "Lorelai", "Alastair", "Azazel", "Jabez", "Sable",
+"Hades", "Odon", "Typhon", "Adrielle", "Thanatos", "Revon", "Kol",
+"Nyx", "Vlasta", "Keres", "Kuraim", "Ozul"];
+let races = ["Dwarf", "Elf", "Halfling",
+"Human", "Dragonborn", "Gnome", "Half-elf",
+"Half-orc", "Tiefling", "Aarakocra", "Genasi",
+"Goliath", "Changelings", "Goblinoids", "Kalashtar",
+"Orc", "Shifters", "Warforged", "Corvian",
+"Crystalkin", "Deepling", "Fairy", "Centaur", "Leonin",
+"Minotaur", "Satyr", "Triton", "Aasimar", "Firbolgs",
+"Kenku", "Tortles", "Simic Hybrid", "Vedalken", "Loxodon",
+"Tabaxi", "Hollow One"];
+let classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk",
+"Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer"];
+let backgrounds = ["Acolyte", "Charlatan", "Criminal", "Entertainer", 
+"Spy", "Gladiator", "Guild Artisan", "Guild Merchant", "Hermit", 
+"Noble", "Knight", "Outlander", "Sage", "Sailor", "Pirate", "Soldier", 
+"Urchin", "House Agent", "City Watch", "Investigator", "Clan Crafter", 
+"Cloistered Scholar", "Courtier", "Faction Agent", "Far Traveler", 
+"Inheritor", "Knight of the Order", "Mercenary Vetran", "Urban Bounty Hunter",
+"Uthgardt Tribe Member", "Waterdhavian Noble", "Hidden Villager", 
+"Planar Traveler", "Grinner", "Volstrucker Agent", "Athlete"];
+var story = document.querySelector(".story")
 
 function getRandom(list){
     let item = list[Math.floor(Math.random()*list.length)];
@@ -11,9 +41,24 @@ function getRandom(list){
 }
 
 function articleTemplate(){
-    let output = getRandom(town);
-    console.log(output)
+    let town = getRandom(towns);
+    let townType = getRandom(cityTypes);
+    let location = getRandom(locations);
+    let name = getRandom(names);
+    let race = getRandom(races);
+    let aclass = getRandom(classes);
+    let background = getRandom(backgrounds);
+    story.innerHTML += `
+        <li>${town}</li>
+        <li>${townType}</li>
+        <li>${location}</li>
+        <li>${name}</li>
+        <li>${race}</li>
+        <li>${aclass}</li>
+        <li>${background}</li>
+    `;
 }
+
 articleTemplate();
 
 /*
