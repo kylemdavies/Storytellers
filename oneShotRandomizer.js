@@ -52,10 +52,11 @@ function articleTemplate(){
     let race = getRandom(races);
     let subrace = get_subrace(race) + " ";
     let aclass = getRandom(classes);
-    let subclass = get_subclass(aclass);
+    let subclass = get_subclass(aclass) + ", ";
     let background = getRandom(backgrounds);
+    let item = getRandom(items);
     story.innerHTML += `
-        <p>In a ${townType} lies a town called ${town} </p>
+        <p>In a ${townType} environment lies a town called ${town}. In the ${location} we find our adventurers. These merry few are pitted against ${name}, the ${background}, the ${subrace}${race} with their abilities as a(n) ${subclass}${aclass} who is on the search for the ${item}.</p>
     `;
 }
 
@@ -68,12 +69,12 @@ function get_subrace(race){
             "Stone Dwarf", "Tundra Dwarf"];
     };
     if (race == "Elf") {
-            subraces = ["High Elf", "Wood Elf", "Dark Elf (Drow)", "Moon Elf", 
-            "Sun Elf", "Pallid Elf", "Sea Elf", "Bright Elf", "Green Elf", 
-            "Thimble Elf"];
+            subraces = ["High", "Wood", "Dark (Drow)", "Moon", 
+            "Sun", "Pallid", "Sea", "Bright", "Green", 
+            "Thimble"];
     };
     if (race == "Halfling") {
-            subraces = ["Lightfoot", "Stout", "Jungle Halfling", "River Halfling",
+            subraces = ["Lightfoot", "Stout", "Jungle", "River",
                 "Lotusden", "Strongheart"];
     };
     if (race == "Human") {
@@ -84,12 +85,11 @@ function get_subrace(race){
             "Green", "Red", "Silver", "White", "Draconblood", "Ravenite"];
     };
     if (race == "Gnome") {
-            subraces = ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold",
-            "Green", "Red", "Silver", "White", "Draconblood", "Ravenite"];
+            subraces = ["Forest", "Rock", "Deep (Svirfneblin)"];
     };
     if (race == "Half-elf") {
-            subraces = ["Wood Elf (Variant)", "Moon Elf (Variant)", "Sun Elf (Variant)",
-                "Aquatic Elf (Variant)"];
+            subraces = ["Wood (Variant)", "Moon (Variant)", "Sun (Variant)",
+                "Aquatic (Variant)"];
     };
     if (race == "Half-orc") {
             subraces = [""];
@@ -102,9 +102,9 @@ function get_subrace(race){
             subraces = [""];
     };
     if (race == "Genasi") {
-            subraces = ["Air Genasi", "Earth Genasi", "Fire Genasi",
-                "Water Genasi", "Ash Genasi", "Ice Genasi", "Slime Genasi",
-                "Storm Genasi"];
+            subraces = ["Air", "Earth", "Fire",
+                "Water", "Ash", "Ice", "Slime",
+                "Storm"];
     };
     if (race == "Goliath") {
             subraces = [""];
@@ -155,7 +155,7 @@ function get_subrace(race){
             subraces = [""];
     };
     if (race == "Aasimar") {
-            subraces = ["Protector Aasimar", "Scourge Aasimar", "Fallen Aasimar"];
+            subraces = ["Protector", "Scourge", "Fallen"];
     };
     if (race == "Firbolgs") {
             subraces = [""];
@@ -189,24 +189,24 @@ function get_subclass(aclass){
     let subclass = ""
     let subclasses = []
     if (aclass == "Barbarian"){
-        subclasses = ["Berserker", "Totem Warrior", "Quake Bringer", "Sky Caller",
-            "Verdant Warden", "Ancestral Gardian", "Storm Herald", "Zealot"];
+        subclasses = ["Path of the Berserker", "Path of the Totem Warrior", "Path of the Quake Bringer", "Path of the Sky Caller",
+            "Path of the Verdant Warden", "Path of the Ancestral Gardian", "Path of the Storm Herald", "Path of the Zealot"];
     };
 
     if (aclass == "Bard"){
-        subclasses = ["Lore", "Valor", "Eloquence", "Journeys", "Glamour",
-            "Swords", "Whispers"];
+        subclasses = ["College of Lore", "College of Valor", "College of Eloquence", "College of Journeys", "College of Glamour",
+            "College of Swords", "College of Whispers"];
     };
 
     if (aclass == "Cleric"){
-        subclasses = ["Knowledge", "Life", "Light", "Nature", "Tempest",
-            "Trickery", "War", "Arcana", "Mountain", "Sea", "Travel",
-            "Winter", "Forge", "Grave", "Order"];
+        subclasses = ["Knowledge Domain", "Life Domain", "Light Domain", "Nature Domain", "Tempest Domain",
+            "Trickery Domain", "War Domain", "Arcana Domain", "Mountain Domain", "Sea Domain", "Travel Domain",
+            "Winter Domain", "Forge Domain", "Grave Domain", "Order Domain"];
     };
 
     if (aclass == "Druid"){
-        subclasses = ["Land", "Moon", "Swords", "Seeds", "Storms",
-            "Dreams", "Shepherd", "Spores"];
+        subclasses = ["Circle of Land", "Circle of Moon", "Circle of Swords", "Circle of Seeds", "Circle of Storms",
+            "Circle of Dreams", "Circle of Shepherd", "Circle of Spores"];
     };
 
     if (aclass == "Fighter"){
@@ -216,13 +216,13 @@ function get_subclass(aclass){
     };
 
     if (aclass == "Monk"){
-        subclasses = ["Open Hand", "Shadow", "Four Elements", "Long Death",
-            "Sun Soul", "Flying Fist", "Drunken Master", "Kensei"];
+        subclasses = ["Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements", "Way of the Long Death",
+            "Way of the Sun Soul", "Way of the Flying Fist", "Way of the Drunken Master", "Way of the Kensei"];
     };
 
     if (aclass == "Paladin"){
-        subclasses = ["Devotion", "Ancients", "Vengeance", "Glory", "Crown",
-            "Dynamism", "Purification", "Conquest", "Redemption"];
+        subclasses = ["Oath of Devotion", "Oath of Ancients", "Oath of Vengeance", "Oath of Glory", "Oath of Crown",
+            "Oath of Dynamism", "Oath of Purification", "Oath of Conquest", "Oath of Redemption"];
     };
 
     if (aclass == "Ranger"){
@@ -230,7 +230,7 @@ function get_subclass(aclass){
             "Gloom Stalker", "Horizon Walker", "Monster Slayer"];
     };
 
-    if (aclass == "Rouge"){
+    if (aclass == "Rogue"){
         subclasses = ["Thief", "Assassin", "Arcane Trickster", "Mastermind",
             "Swashbuckler", "Aerialist", "Inquisitive", "Scout"];
     };
@@ -242,14 +242,14 @@ function get_subclass(aclass){
     };
 
     if (aclass == "Warlock"){
-        subclasses = ["The Archfey", "The Fiend", "The Great Old One", 
-            "The Undying", "The Dragon", "The Celestial", "The Hexblade"];
+        subclasses = ["Archfey Patron", "Fiend Patron", "Great Old One Patron", 
+            "Undying Patron", "Dragon Patron", "Celestial Patron", "Hexblade Patron"];
     };
 
     if (aclass == "Wizard"){
-        subclasses = ["Abjuration", "Conjuration", "Divination", "Enchantment",
-            "Evocation", "Illusion", "Necromancy", "Transmutation", "Bladesinging",
-            "War", "Chronurgy", "Graviturgy"];
+        subclasses = ["School of Abjuration", "School of Conjuration", "School of Divination", "School of Enchantment",
+            "School of Evocation", "School of Illusion", "School of Necromancy", "School of Transmutation", "School of Bladesinging",
+            "School of War", "School of Chronurgy", "School of Graviturgy"];
     };
 
     if (aclass == "Artificer"){
