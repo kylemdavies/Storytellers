@@ -45,6 +45,7 @@ function getRandom(list){
 }
 
 function articleTemplate(){
+    story.innerHTML = "";
     let town = getRandom(towns);
     let townType = getRandom(cityTypes);
     let location = getRandom(locations);
@@ -262,18 +263,5 @@ function get_subclass(aclass){
 }
 
 articleTemplate();
-
-/*
-def get_background():
-    backgrounds = ["Acolyte", "Charlatan", "Criminal", "Entertainer", 
-        "Spy", "Gladiator", "Guild Artisan", "Guild Merchant", "Hermit", 
-        "Noble", "Knight", "Outlander", "Sage", "Sailor", "Pirate", "Soldier", 
-        "Urchin", "House Agent", "City Watch", "Investigator", "Clan Crafter", 
-        "Cloistered Scholar", "Courtier", "Faction Agent", "Far Traveler", 
-        "Inheritor", "Knight of the Order", "Mercenary Vetran", "Urban Bounty Hunter",
-        "Uthgardt Tribe Member", "Waterdhavian Noble", "Hidden Villager", 
-        "Planar Traveler", "Grinner", "Volstrucker Agent", "Athlete"]
-    background = make_random(backgrounds)
-    return background
-
-*/
+let button = document.querySelector(".refresh")
+button.addEventListener("click", articleTemplate)

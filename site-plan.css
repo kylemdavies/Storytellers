@@ -187,3 +187,28 @@ nav a:hover {
 .logo {
   width: 200px;
 }
+
+.section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.story {
+  grid-column: span 2;
+}
+
+.refresh {
+  width: fill;
+  background-color: var(--nav-background-color);
+  color: var(--primary-color);
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.refresh:hover {
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
+}
